@@ -198,6 +198,14 @@ The sync script copies only distributable files — SKILL.md, references/, compo
 
 ---
 
+## Powered by
+
+Built on [**@basementstudio/shader-lab**](https://github.com/basementstudio/shader-lab) by [basement.studio](https://basement.studio) — a portable React runtime for composing, stacking, and animating WebGPU shader layers. The visual authoring editor is hosted at [basement.studio/shader-lab](https://basement.studio/shader-lab).
+
+Part of [**jitsu-os**](https://github.com/0xjitsu/jitsu-os) — an open-source AI agent skill system.
+
+---
+
 ## Tech Stack
 
 | Library | Role |
@@ -218,6 +226,8 @@ The sync script copies only distributable files — SKILL.md, references/, compo
 This project is licensed under **AGPL v3** — free for open source use. Modifications must be shared under the same license.
 
 A **commercial license** is available for proprietary use. Contact [@0xjitsu](https://github.com/0xjitsu) on GitHub.
+
+**Note:** `@basementstudio/shader-lab` is a separate open-source project by [basement.studio](https://basement.studio) under its own license. This plugin wraps it as a Claude Code skill but does not modify or redistribute the library itself — it is installed as a standard npm dependency in your project.
 
 Contributions require agreeing to the [CLA in CONTRIBUTING.md](CONTRIBUTING.md), which grants the maintainer perpetual relicensing rights to support the dual-license model.
 
