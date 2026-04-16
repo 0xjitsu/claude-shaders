@@ -1,0 +1,81 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Paper Gradient",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "ink",
+      "name": "Ink Effect",
+      "kind": "effect",
+      "type": "ink",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "blurDirection": 68,
+        "blurPasses": 12,
+        "crispPasses": 3,
+        "blurStrength": 0.025,
+        "crispBlend": 0.75,
+        "dripLength": 7.1,
+        "dripWeight": 1.2,
+        "fluidNoise": 0.2,
+        "noiseScale": 1,
+        "smokeSpeed": 0.15,
+        "smokeTurbulence": 0.25,
+        "blurSpread": 1.7,
+        "grainEnabled": true,
+        "grainIntensity": 0.25,
+        "grainScale": 1.5,
+        "backgroundColor": "#F5F1E8",
+        "coreColor": "#1A1A1A",
+        "midColor": "#4A4A4A",
+        "edgeColor": "#2A2A2A",
+        "bloomEnabled": false,
+        "bloomIntensity": 1.25,
+        "bloomThreshold": 0.6,
+        "bloomRadius": 6,
+        "bloomSoftness": 0.35
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 20,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-fluid",
+        "layerId": "ink",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "fluidNoise",
+          "label": "Fluid Noise",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 0.1 },
+          { "id": "kf-1", "time": 5, "value": 0.35 },
+          { "id": "kf-2", "time": 10, "value": 0.2 },
+          { "id": "kf-3", "time": 15, "value": 0.4 },
+          { "id": "kf-4", "time": 20, "value": 0.1 }
+        ]
+      }
+    ]
+  }
+}

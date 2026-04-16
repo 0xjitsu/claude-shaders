@@ -1,0 +1,117 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Black Background",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "ascii",
+      "name": "ASCII Effect",
+      "kind": "effect",
+      "type": "ascii",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "cellSize": 12,
+        "charset": "dense",
+        "fontWeight": "regular",
+        "colorMode": "green-terminal",
+        "monoColor": "#00FF41",
+        "bgOpacity": 0,
+        "invert": false,
+        "glyphSignalMode": "luminance",
+        "colorSignalMode": "luminance",
+        "signalBlackPoint": 0,
+        "signalWhitePoint": 1,
+        "signalGamma": 1,
+        "presenceThreshold": 0,
+        "presenceSoftness": 0,
+        "shimmerAmount": 0.1,
+        "shimmerSpeed": 2,
+        "directionBias": 0,
+        "toneMapping": "none",
+        "bloomEnabled": true,
+        "bloomIntensity": 1.25,
+        "bloomThreshold": 0.6,
+        "bloomRadius": 6,
+        "bloomSoftness": 0.35
+      }
+    },
+    {
+      "id": "crt",
+      "name": "CRT Effect",
+      "kind": "effect",
+      "type": "crt",
+      "visible": true,
+      "opacity": 0.8,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "crtMode": "slot-mask",
+        "cellSize": 3,
+        "scanlineIntensity": 0.25,
+        "maskIntensity": 0.8,
+        "barrelDistortion": 0.08,
+        "chromaticAberration": 1,
+        "beamFocus": 0.58,
+        "brightness": 1.5,
+        "highlightDrive": 1,
+        "highlightThreshold": 0.62,
+        "shoulder": 0.25,
+        "chromaRetention": 1.15,
+        "shadowLift": 0.1,
+        "persistence": 0.1,
+        "vignetteIntensity": 0.5,
+        "flickerIntensity": 0.05,
+        "glitchIntensity": 0.05,
+        "glitchSpeed": 2,
+        "signalArtifacts": 0.3,
+        "bloomEnabled": false,
+        "bloomIntensity": 1.93,
+        "bloomThreshold": 0,
+        "bloomRadius": 8,
+        "bloomSoftness": 0.31
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 8,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-shimmer",
+        "layerId": "ascii",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "shimmerAmount",
+          "label": "Shimmer Amount",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 0.05 },
+          { "id": "kf-1", "time": 2, "value": 0.4 },
+          { "id": "kf-2", "time": 5, "value": 0.15 },
+          { "id": "kf-3", "time": 8, "value": 0.05 }
+        ]
+      }
+    ]
+  }
+}

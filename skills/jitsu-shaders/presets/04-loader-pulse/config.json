@@ -1,0 +1,86 @@
+{
+  "composition": { "width": 400, "height": 400 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Radial Gradient",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "dither",
+      "name": "Dithering",
+      "kind": "effect",
+      "type": "dithering",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "algorithm": "bayer-4x4",
+        "levels": 4,
+        "pixelSize": 2,
+        "spread": 0.5,
+        "colorMode": "source",
+        "monoColor": "#38BDF8",
+        "shadowColor": "#101010",
+        "highlightColor": "#38BDF8",
+        "dotScale": 1.0,
+        "animateDither": true,
+        "ditherSpeed": 1.0,
+        "chromaticSplit": false
+      }
+    },
+    {
+      "id": "blur",
+      "name": "Directional Blur",
+      "kind": "effect",
+      "type": "directional-blur",
+      "visible": true,
+      "opacity": 0.8,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "screen",
+      "compositeMode": "filter",
+      "params": {
+        "strength": 12,
+        "samples": 8,
+        "angle": 0,
+        "mode": "radial",
+        "center": [0.5, 0.5]
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 2,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-spread",
+        "layerId": "dither",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "spread",
+          "label": "Dither Spread",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 0.1 },
+          { "id": "kf-1", "time": 1, "value": 0.9 },
+          { "id": "kf-2", "time": 2, "value": 0.1 }
+        ]
+      }
+    ]
+  }
+}

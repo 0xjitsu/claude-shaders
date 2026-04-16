@@ -1,0 +1,65 @@
+{
+  "composition": { "width": 800, "height": 600 },
+  "layers": [
+    {
+      "id": "chroma",
+      "name": "Chromatic Aberration",
+      "kind": "effect",
+      "type": "chromatic-aberration",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "intensity": 8,
+        "center": [0.5, 0.5],
+        "angle": 0,
+        "direction": "radial"
+      }
+    },
+    {
+      "id": "fluted",
+      "name": "Fluted Glass",
+      "kind": "effect",
+      "type": "fluted-glass",
+      "visible": true,
+      "opacity": 0.85,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "frequency": 12,
+        "amplitude": 0.04,
+        "warp": 0.5,
+        "irregularity": 0.2,
+        "angle": 90
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 10,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-chroma",
+        "layerId": "chroma",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "intensity",
+          "label": "Intensity",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 3 },
+          { "id": "kf-1", "time": 5, "value": 14 },
+          { "id": "kf-2", "time": 10, "value": 3 }
+        ]
+      }
+    ]
+  }
+}

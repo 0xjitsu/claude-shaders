@@ -1,0 +1,87 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Aurora Background",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "particles",
+      "name": "Particle Grid",
+      "kind": "effect",
+      "type": "particle-grid",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "gridResolution": 128,
+        "pointSize": 2,
+        "displacement": 0.6,
+        "backgroundColor": "#050A1A",
+        "noiseAmount": 0.3,
+        "noiseScale": 3,
+        "noiseSpeed": 0.5,
+        "bloomEnabled": true,
+        "bloomIntensity": 1.5,
+        "bloomThreshold": 0.4,
+        "bloomRadius": 8,
+        "bloomSoftness": 0.35
+      }
+    },
+    {
+      "id": "blur",
+      "name": "Directional Blur",
+      "kind": "effect",
+      "type": "directional-blur",
+      "visible": true,
+      "opacity": 0.7,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "screen",
+      "compositeMode": "filter",
+      "params": {
+        "strength": 24,
+        "samples": 12,
+        "angle": 45,
+        "mode": "radial",
+        "center": [0.5, 0.5]
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 12,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-noise",
+        "layerId": "particles",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "noiseAmount",
+          "label": "Noise Amount",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 0.1 },
+          { "id": "kf-1", "time": 4, "value": 0.6 },
+          { "id": "kf-2", "time": 8, "value": 0.3 },
+          { "id": "kf-3", "time": 12, "value": 0.1 }
+        ]
+      }
+    ]
+  }
+}

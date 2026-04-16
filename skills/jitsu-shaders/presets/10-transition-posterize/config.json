@@ -1,0 +1,57 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Warm Gradient",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "posterize",
+      "name": "Posterize",
+      "kind": "effect",
+      "type": "posterize",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "levels": 2,
+        "gamma": 1,
+        "mode": "rgb"
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 0.6,
+    "loop": false,
+    "tracks": [
+      {
+        "id": "track-levels",
+        "layerId": "posterize",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "levels",
+          "label": "Levels",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 2 },
+          { "id": "kf-1", "time": 0.6, "value": 16 }
+        ]
+      }
+    ]
+  }
+}

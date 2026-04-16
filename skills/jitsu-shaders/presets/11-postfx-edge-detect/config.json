@@ -1,0 +1,30 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "edge",
+      "name": "Edge Detect",
+      "kind": "effect",
+      "type": "edge-detect",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "threshold": 0.1,
+        "strength": 1.5,
+        "invert": false,
+        "colorMode": "mono",
+        "lineColor": "#A6D600",
+        "bgColor": "#000000"
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 1,
+    "loop": true,
+    "tracks": []
+  }
+}

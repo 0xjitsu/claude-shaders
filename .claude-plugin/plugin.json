@@ -1,0 +1,9 @@
+{
+  "name": "claude-shaders",
+  "version": "1.0.0",
+  "description": "WebGPU shader baseline for Claude Code — 12 production-ready presets via @basementstudio/shader-lab with graceful poster fallback.",
+  "author": "0xjitsu",
+  "homepage": "https://github.com/0xjitsu/claude-shaders",
+  "license": "AGPL-3.0-or-later",
+  "skills": ["skills/jitsu-shaders"]
+}

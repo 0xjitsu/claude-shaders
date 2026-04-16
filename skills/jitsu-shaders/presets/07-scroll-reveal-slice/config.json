@@ -1,0 +1,44 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Dark Background",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "slice",
+      "name": "Slice Glitch",
+      "kind": "effect",
+      "type": "slice",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "amount": 80,
+        "sliceHeight": 28,
+        "blockWidth": 120,
+        "density": 0.4,
+        "dispersion": 0.12,
+        "speed": 0,
+        "direction": "both"
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 1,
+    "loop": false,
+    "tracks": []
+  }
+}

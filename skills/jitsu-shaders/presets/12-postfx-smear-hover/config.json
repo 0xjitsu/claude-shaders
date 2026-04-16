@@ -1,0 +1,29 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "smear",
+      "name": "Smear",
+      "kind": "effect",
+      "type": "smear",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "angle": 0,
+        "start": 0,
+        "end": 1,
+        "strength": 0,
+        "samples": 8
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 1,
+    "loop": false,
+    "tracks": []
+  }
+}

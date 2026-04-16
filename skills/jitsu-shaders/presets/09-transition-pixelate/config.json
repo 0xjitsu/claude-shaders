@@ -1,0 +1,56 @@
+{
+  "composition": { "width": 1920, "height": 1080 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Transparent Source",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "pixels",
+      "name": "Pixelation",
+      "kind": "effect",
+      "type": "pixelation",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "cellSize": 64,
+        "aspectRatio": 1
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 0.8,
+    "loop": false,
+    "tracks": [
+      {
+        "id": "track-cell",
+        "layerId": "pixels",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "cellSize",
+          "label": "Cell Size",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 2 },
+          { "id": "kf-1", "time": 0.8, "value": 128 }
+        ]
+      }
+    ]
+  }
+}

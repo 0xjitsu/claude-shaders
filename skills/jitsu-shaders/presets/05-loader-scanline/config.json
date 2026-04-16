@@ -1,0 +1,100 @@
+{
+  "composition": { "width": 400, "height": 400 },
+  "layers": [
+    {
+      "id": "bg",
+      "name": "Black Background",
+      "kind": "source",
+      "type": "gradient",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {}
+    },
+    {
+      "id": "crt",
+      "name": "CRT Scanlines",
+      "kind": "effect",
+      "type": "crt",
+      "visible": true,
+      "opacity": 1,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "normal",
+      "compositeMode": "filter",
+      "params": {
+        "crtMode": "composite-tv",
+        "cellSize": 2,
+        "scanlineIntensity": 0.17,
+        "maskIntensity": 0.9,
+        "barrelDistortion": 0.1,
+        "chromaticAberration": 1,
+        "beamFocus": 0.6,
+        "brightness": 2.0,
+        "highlightDrive": 1,
+        "highlightThreshold": 0.62,
+        "shoulder": 0.2,
+        "chromaRetention": 1.0,
+        "shadowLift": 0.1,
+        "persistence": 0.05,
+        "vignetteIntensity": 0.6,
+        "flickerIntensity": 0.1,
+        "glitchIntensity": 0.05,
+        "glitchSpeed": 3,
+        "signalArtifacts": 0.2,
+        "bloomEnabled": true,
+        "bloomIntensity": 1.5,
+        "bloomThreshold": 0.3,
+        "bloomRadius": 6,
+        "bloomSoftness": 0.31
+      }
+    },
+    {
+      "id": "pxsort",
+      "name": "Pixel Sorting",
+      "kind": "effect",
+      "type": "pixel-sorting",
+      "visible": true,
+      "opacity": 0.6,
+      "hue": 0,
+      "saturation": 1,
+      "blendMode": "screen",
+      "compositeMode": "filter",
+      "params": {
+        "threshold": 0.1,
+        "upperThreshold": 0.9,
+        "direction": "horizontal",
+        "mode": "luma",
+        "reverse": false,
+        "range": 0.15
+      }
+    }
+  ],
+  "timeline": {
+    "duration": 1.5,
+    "loop": true,
+    "tracks": [
+      {
+        "id": "track-scanline",
+        "layerId": "crt",
+        "enabled": true,
+        "interpolation": "smooth",
+        "binding": {
+          "kind": "param",
+          "key": "scanlineIntensity",
+          "label": "Scanline Intensity",
+          "valueType": "number"
+        },
+        "keyframes": [
+          { "id": "kf-0", "time": 0, "value": 0.05 },
+          { "id": "kf-1", "time": 0.5, "value": 0.4 },
+          { "id": "kf-2", "time": 1.0, "value": 0.15 },
+          { "id": "kf-3", "time": 1.5, "value": 0.05 }
+        ]
+      }
+    ]
+  }
+}
